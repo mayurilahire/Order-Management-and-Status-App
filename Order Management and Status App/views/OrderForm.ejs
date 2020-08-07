@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>New Order Form</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    </head>
+    <body>
+        <br/>
+        <div class="container">
+                <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span> 
+                            </button>
+                            <a class="navbar-brand" href="#">Edureka</a>
+                          </div>
+                          <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                              <li class="active"><a href="/">Home</a></li>
+                              <li><a href="/enterOrder">Place Order</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                    </nav>
+        <br/>
+        <!-- OrderForm START -->
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                New Order Form
+            </div>
+            <div class="panel-body">
+                <form action="/addOrder" method="POST">
+                    <div class="form-group">
+                        <label for="name" >NAME</label>
+                        <input type="text" id="name"
+                                name="name"
+                                class="form-control"
+                        />
+                        <label for="email" >  EMAIL</label>
+                        <input type="email" id="email"
+                                name="email"
+                                class="form-control"
+                        />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="address">ADDRESS</label>
+                        <input type="text" id="address"
+                                name="address"
+                                class="form-control"
+                        />
+                        <hr />
+                    </div>
+                    <div class="form-group">
+                            <label for="product_name" >Product Name</label>
+                            <select name="product_name"
+                            class="form-control" id="pname">
+                                <option value="headphone">HeadPhone</option>
+                                <option value="headphone">Laptop</option>
+                                <option value="headphone">Mouse</option>
+                                <option value="headphone">Windows 10</option>
+                            </select>
+                    </div>
+
+                            <label for="unit_price" >Unit Price</label>
+                            <input type="number" id="uprice"
+                                    name="unit_price"
+                                    class="form-control"
+                            />
+                            <label for="quantity" >Quantity</label>
+                            <input type="number" id="qty"
+                                    name="quantity"
+                                    class="form-control"
+                            />
+    
+                        </div>
+                    <hr />
+                    <center>
+                            <button type="submit" class="btn btn-success">SUBMIT</button>
+                            <button type="reset" class="btn btn-danger">RESET</button>
+                    </center>
+                    
+                </form>
+            </div>
+            </div>
+            <!-- OrderForm END -->                            
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Order Dashboard</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    </head>
+    <body>
+        <br/>
+        <div class="container">
+                <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span> 
+                            </button>
+                            <a class="navbar-brand" href="#">Edureka</a>
+                          </div>
+                          <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/enterOrder">Place Order</a></li>
+                            </ul>
+                           
+                          </div>
+                        </div>
+                </nav>
+        <br/>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Admin Dashboard [Order Status]
+            </div>
+            <div class="panel panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped" id="myTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Product_Name</th>
+                                <th>Quantity</th>
+                                <th>Order_Date</th>
+                                <th>Order_Status</th>
+                                <th>Notifiy</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                                <% for(var i=0; i<data.length; i++) { %>
+                                    <tr>
+                                    
+                                        
+                                        <td><%= data[i].name %></td>
+                                        <td><%= data[i].email %></td>
+                                        <td><%= data[i].product_name %></td>
+                                        <td><%= data[i].quantity %></td>
+                                        <td><%= data[i].order_date %></td>
+                                        <td><%= data[i].order_status %></td>
+                                        <td style="border-radius: 2px;">
+                                            <a href="/sendEmail/<%= data[i].email %>" target="_blank" 
+                                                class="btn btn-info"
+                                                style="margin-left: 10px; border-radius: 12px;font-size: 14px; color: #ffffff;font-weight:bold;display: inline-block;">
+                                            Send Email             
+                                            </a>
+                                        </td>
+                                        
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- OrderStatus END -->                           
+        </div> 
+    </body>
+</html>
